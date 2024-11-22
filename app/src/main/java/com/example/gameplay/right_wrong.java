@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Random;
 
-public class choose_answer extends AppCompatActivity {
+public class right_wrong extends AppCompatActivity {
     public int first_val;
     public int sec_val;
     public int third_val;
@@ -34,7 +34,7 @@ public class choose_answer extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.choose_answer);
+        setContentView(R.layout.right_wrong);
         findViews();
         newValGenerate();
         boolean checkVal = checkVal();
