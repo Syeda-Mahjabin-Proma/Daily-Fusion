@@ -1,0 +1,64 @@
+package com.example.gameplay;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class health_check extends AppCompatActivity {
+        private Button bmi, bmr, water, heart, calories;
+
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.health_check);
+            findViews();
+            onClick();
+        }
+
+        private void findViews() {
+            bmi = findViewById(R.id.bmi);
+            bmr = findViewById(R.id.bmr);
+            water = findViewById(R.id.water);
+            heart = findViewById(R.id.heart);
+            calories = findViewById(R.id.calories);
+        }
+
+        private void onClick() {
+            bmi.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(health_check.this, calcBMI.class));
+                }
+            });
+
+            bmr.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(health_check.this, calcBMR.class));
+                }
+            });
+            water.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(health_check.this, water_need.class));
+
+                }
+            });
+            heart.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(health_check.this, heart_rate.class));
+                }
+            });
+            calories.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(health_check.this, calories_burn.class));
+                }
+            });
+        }
+    }

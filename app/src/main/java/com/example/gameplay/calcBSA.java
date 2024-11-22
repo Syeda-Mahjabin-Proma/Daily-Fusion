@@ -1,4 +1,4 @@
 package com.example.gameplay;
 
-public class gameOption {
+public class calcBSI {
 }
