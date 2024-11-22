@@ -23,6 +23,13 @@
         </activity>
         <activity android:name=".signup" />
         <activity android:name=".login" />
+        <activity android:name=".choose_work" />
+        <activity android:name=".calcBMI" />
+        <activity android:name=".health_check" />
+        <activity android:name=".calcBMR" />
+        <activity android:name=".water_need" />
+        <activity android:name=".calcBSA" />
+        <activity android:name=".calories_burn" />
     </application>
 
 </manifest>

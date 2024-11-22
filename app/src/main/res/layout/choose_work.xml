@@ -1,6 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/welcome">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:alpha="0.7"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30dp"
+                android:textAlignment="center"
+                android:text=" Choose What Would You Like to Do Now"
+                android:layout_marginBottom="20dp"
+                android:textColor="@color/white"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/playGame"
+                    android:layout_width= "wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Play Game to Relax"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:cornerRadius="0dp"
+                    android:backgroundTint="@color/white"/>
+
+                <Button
+                    android:id="@+id/weightCheck"
+                    android:layout_width= "wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" Weight and Health Check"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    app:cornerRadius="0dp"
+                    android:backgroundTint="@color/white"/>
+
+                <Button
+                    android:id="@+id/todo"
+                    android:layout_width= "wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Make Your Work List "
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    app:cornerRadius="0dp"
+                    android:backgroundTint="@color/white"/>
+
+                <Button
+                    android:id="@+id/motivation"
+                    android:layout_width= "wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" Need Some Motivation! "
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    app:cornerRadius="0dp"
+                    android:backgroundTint="@color/white"/>
+
+                <Button
+                    android:id="@+id/moneyCalculate"
+                    android:layout_width= "wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" Calculate the Change "
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    app:cornerRadius="0dp"
+                    android:backgroundTint="@color/white"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+</LinearLayout>

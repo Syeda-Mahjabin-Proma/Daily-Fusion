@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Game Play"
+rootProject.name = "Daily Fusion"
 include(":app")

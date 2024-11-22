@@ -8,7 +8,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class health_check extends AppCompatActivity {
-        private Button bmi, bmr, water, heart, calories;
+        private Button bmi, bmr, water, bsi, calories;
 
 
         @Override
@@ -23,7 +23,7 @@ public class health_check extends AppCompatActivity {
             bmi = findViewById(R.id.bmi);
             bmr = findViewById(R.id.bmr);
             water = findViewById(R.id.water);
-            heart = findViewById(R.id.heart);
+            bsi = findViewById(R.id.bsi);
             calories = findViewById(R.id.calories);
         }
 
@@ -48,10 +48,10 @@ public class health_check extends AppCompatActivity {
 
                 }
             });
-            heart.setOnClickListener(new View.OnClickListener() {
+            bsi.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    startActivity(new Intent(health_check.this, heart_rate.class));
+                    startActivity(new Intent(health_check.this, calcBSA.class));
                 }
             });
             calories.setOnClickListener(new View.OnClickListener() {
