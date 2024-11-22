@@ -32,6 +32,7 @@
         <activity android:name=".calories_burn" />
         <activity android:name=".gameplay" />
         <activity android:name=".right_wrong" />
+        <activity android:name=".tictactoe" />
     </application>
 
 </manifest>
