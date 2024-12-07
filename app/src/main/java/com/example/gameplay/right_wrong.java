@@ -39,7 +39,7 @@ public class right_wrong extends AppCompatActivity {
         newValGenerate();
         boolean checkVal = checkVal();
         setUpButtonOnClickListener(checkVal);
-        updateUI(); // Update UI with restored values
+        updateUI();
 
         if (savedInstanceState != null) {
             // Restore values from savedInstanceState

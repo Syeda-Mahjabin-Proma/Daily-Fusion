@@ -44,7 +44,7 @@ public class gameplay extends AppCompatActivity {
         memory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(gameplay.this, memory_game.class));
+                startActivity(new Intent(gameplay.this, memory.class));
 
             }
         });
