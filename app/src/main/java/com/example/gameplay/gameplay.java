@@ -57,7 +57,7 @@ public class gameplay extends AppCompatActivity {
         typing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(gameplay.this, typing_game.class));
+                startActivity(new Intent(gameplay.this, rock_paper_scissor.class));
             }
         });
     }
