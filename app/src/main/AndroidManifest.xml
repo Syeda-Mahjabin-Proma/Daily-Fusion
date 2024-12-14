@@ -38,6 +38,7 @@
         <activity android:name=".rock_paper_scissor" />
         <activity android:name=".calcMoney" />
         <activity android:name=".motivate" />
+        <activity android:name=".workList" />
     </application>
 
 </manifest>
