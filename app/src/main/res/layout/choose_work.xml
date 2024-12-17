@@ -9,85 +9,89 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/black"
-        android:alpha="0.7"
+        android:alpha="0.8"
         android:gravity="center">
 
-        <LinearLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="10dp">
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="10dp"
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="30dp"
-                android:textAlignment="center"
-                android:text=" Choose What Would You Like to Do Now"
-                android:layout_marginBottom="20dp"
-                android:textColor="@color/white"/>
-
-
+            android:layout_margin="20dp">
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/playGame"
-                    android:layout_width= "wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="10dp">
+                <TextView
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Play Game to Relax"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    app:cornerRadius="0dp"
-                    android:backgroundTint="@color/white"/>
-
-                <Button
-                    android:id="@+id/weightCheck"
-                    android:layout_width= "wrap_content"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:text="Select Goals"
+                    android:layout_marginBottom="5dp"
+                    android:textColor="@color/black"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text=" Weight and Health Check"
-                    android:textColor="@color/black"
-                    android:textSize="20dp"
-                    app:cornerRadius="0dp"
-                    android:backgroundTint="@color/white"/>
-
-                <Button
-                    android:id="@+id/todo"
-                    android:layout_width= "wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Make Your Work List "
-                    android:textColor="@color/black"
-                    android:textSize="20dp"
-                    app:cornerRadius="0dp"
-                    android:backgroundTint="@color/white"/>
-
-                <Button
-                    android:id="@+id/motivation"
-                    android:layout_width= "wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=" Need Some Motivation! "
-                    android:textColor="@color/black"
-                    android:textSize="20dp"
-                    app:cornerRadius="0dp"
-                    android:backgroundTint="@color/white"/>
-
-                <Button
-                    android:id="@+id/moneyCalculate"
-                    android:layout_width= "wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=" Calculate the Change "
-                    android:textColor="@color/black"
-                    android:textSize="20dp"
-                    app:cornerRadius="0dp"
-                    android:backgroundTint="@color/white"/>
-
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+    
+                    <Button
+                        android:id="@+id/playGame"
+                        android:layout_width= "match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Play Game to Relax"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        app:cornerRadius="5dp"
+                        android:backgroundTint="@color/black"/>
+    
+                    <Button
+                        android:id="@+id/weightCheck"
+                        android:layout_width= "match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=" Weight and Health Check"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        app:cornerRadius="5dp"
+                        android:backgroundTint="@color/black"/>
+    
+                    <Button
+                        android:id="@+id/todo"
+                        android:layout_width= "match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Make Your Work List "
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        app:cornerRadius="5dp"
+                        android:backgroundTint="@color/black"/>
+    
+                    <Button
+                        android:id="@+id/motivation"
+                        android:layout_width= "match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=" Need Some Motivation! "
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        app:cornerRadius="5dp"
+                        android:backgroundTint="@color/black"/>
+    
+                    <Button
+                        android:id="@+id/moneyCalculate"
+                        android:layout_width= "match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=" Calculate the Change "
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        app:cornerRadius="5dp"
+                        android:backgroundTint="@color/black"/>
+                </LinearLayout>
+    
             </LinearLayout>
-
-        </LinearLayout>
-
+        </androidx.cardview.widget.CardView>
     </LinearLayout>
 
 

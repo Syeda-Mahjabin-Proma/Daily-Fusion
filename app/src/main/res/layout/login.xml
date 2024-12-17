@@ -16,29 +16,33 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16sp"
+                android:layout_margin="15sp"
                 android:gravity="center"
                 android:orientation="vertical">
-
-                <TextView
+                <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16sp"
-                    android:background="@color/white"
-                    android:text=" Login in your Account "
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="25dp"
-                    android:textStyle="bold" />
-
+                    app:cardBackgroundColor="@color/hint_black"
+                    app:cardCornerRadius="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" Login in your Account "
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="25dp"
+                        android:textStyle="bold"
+                        android:padding="10dp"/>
+                </androidx.cardview.widget.CardView>
 
 
                 <EditText
                     android:id="@+id/userEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16sp"
+                    android:layout_marginVertical="16sp"
                     android:hint="Email"
+                    android:textColorHint="@color/hint_black"
                     android:inputType="textEmailAddress"/>
 
                 <EditText
@@ -47,13 +51,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16sp"
                     android:hint="Write Your Password"
+                    android:textColorHint="@color/hint_black"
                     android:inputType="textPassword"/>
 
                 <Button
                     android:id="@+id/userLoginBtn"
                     android:layout_width= "wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="30dp"
+
                     android:text="Login"
                     android:textColor="@color/white"
                     android:textSize="18sp"
