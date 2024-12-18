@@ -65,7 +65,7 @@
                     android:layout_width="1.9in"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/white"
-                    android:text="BSI (Body Surface Area)"
+                    android:text="BSA (Body Surface Area)"
                     android:textColor="@color/black"
                     android:textSize="20dp"
                     app:cornerRadius="5dp" />

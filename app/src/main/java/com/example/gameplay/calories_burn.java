@@ -48,10 +48,11 @@ public class calories_burn extends AppCompatActivity {
                     double cal_burn = weight * met * duration;
                     String calString = String.format("%.2f", cal_burn);
                     reset_text.setText("You Burnt " + calString + " Calories Today");
+                    Toast.makeText(calories_burn.this, "Calculation Done!!!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-        Toast.makeText(calories_burn.this, "Calculation Done!!!", Toast.LENGTH_SHORT).show();
+
     }
 
 }

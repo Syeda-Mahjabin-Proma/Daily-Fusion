@@ -49,10 +49,11 @@ public class calcBSA extends AppCompatActivity {
                     double bsa = Math.sqrt((weight * total_height)/3600);
                     String bsaString = String.format("%.2f", bsa);
                     reset_text.setText("Your Body Surface Area is: " + bsaString + " Square Meters.");
+                    Toast.makeText(calcBSA.this, "Your BSA Calculation is Done!!!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-        Toast.makeText(calcBSA.this, "Your BSA Calculation is Done!!!", Toast.LENGTH_SHORT).show();
+
     }
 
 }
