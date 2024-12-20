@@ -8,9 +8,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -33,48 +31,47 @@ public class word_game extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.word_game);
-        welcome = findViewById(R.id.welcome);
-        wordgen = findViewById(R.id.wordGenerate);
-        playerGuess = findViewById(R.id.playerGuess);
-        givenWord = findViewById(R.id.givenWord);
-        score_val = findViewById(R.id.score_val);
-        life_val = findViewById(R.id.life_val);
-        finalResultTextView = findViewById(R.id.finalResult);
-        playerWord = findViewById(R.id.playerWord);
-        checkButton = findViewById(R.id.check);
-        playAgain = findViewById(R.id.playAgain);
-        exit = findViewById(R.id.exit);
-        newButton = findViewById(R.id.newBtn);
-        scoreLife = findViewById(R.id.scoreLife);
-
+        setContentView(R.layout.play_word_game);
+        findViews();
         words = loadWordsFromAssets();
-
         if (words != null && !words.isEmpty()) {
             setNewWord();
         } else {
             Toast.makeText(this, "Error loading words from assets!", Toast.LENGTH_LONG).show();
         }
-
-        checkButton.setOnClickListener(v -> checkPlayerGuess());
+        submit();
     }
 
-    private ArrayList<String> loadWordsFromAssets() {
-        ArrayList<String> wordList = new ArrayList<>();
-        try {
-            AssetManager assetManager = getAssets();
-            BufferedReader reader = new BufferedReader(new InputStreamReader(assetManager.open("words.txt")));
-            String line;
-            while ((line = reader.readLine()) != null) {
-                if (!line.trim().isEmpty()) {
-                    wordList.add(line.trim());
-                }
+    private void submit() {
+        checkButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkPlayerGuess();
             }
-            reader.close();
-        } catch (Exception e) {
-            e.printStackTrace();
+        });
+    }
+
+    private void checkPlayerGuess() {
+        String playerGuess = playerWord.getText().toString().trim();
+        if (playerGuess.isEmpty()) {
+            Toast.makeText(this, "Please enter a guess!", Toast.LENGTH_SHORT).show();
+            return;
         }
-        return wordList;
+
+        if (playerGuess.equalsIgnoreCase(currentWord)) {
+            score++;
+            score_val.setText(String.valueOf(score));
+            Toast.makeText(this, "Correct!", Toast.LENGTH_SHORT).show();
+            setNewWord();
+        } else {
+            lives--;
+            life_val.setText(String.valueOf(lives));
+            Toast.makeText(this, "Wrong!", Toast.LENGTH_SHORT).show();
+            playerWord.setText("");
+            if (lives == 0) {
+                endGame();
+            }
+        }
     }
 
     private void setNewWord() {
@@ -98,29 +95,6 @@ public class word_game extends AppCompatActivity {
         return shuffled.toString();
     }
 
-    private void checkPlayerGuess() {
-        String playerGuess = playerWord.getText().toString().trim();
-        if (playerGuess.isEmpty()) {
-            Toast.makeText(this, "Please enter a guess!", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        if (playerGuess.equalsIgnoreCase(currentWord)) {
-            score++;
-            score_val.setText(String.valueOf(score));
-            Toast.makeText(this, "Correct! +1 Score!", Toast.LENGTH_SHORT).show();
-            setNewWord();
-        } else {
-            lives--;
-            life_val.setText(String.valueOf(lives));
-            Toast.makeText(this, "Wrong! -1 Life!", Toast.LENGTH_SHORT).show();
-            playerWord.setText("");
-            if (lives == 0) {
-                endGame();
-            }
-        }
-    }
-
     private void endGame() {
         welcome.setText("Game Over!!!");
         finalResultTextView.setVisibility(View.VISIBLE);
@@ -135,8 +109,8 @@ public class word_game extends AppCompatActivity {
         playAgain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish(); // Finish the current activity
-                startActivity(getIntent()); // Start a new instance of choose_answer
+                finish();
+                startActivity(getIntent());
             }
         });
         exit.setOnClickListener(new View.OnClickListener() {
@@ -145,6 +119,39 @@ public class word_game extends AppCompatActivity {
                 finish();
             }
         });
+    }
 
+    private ArrayList<String> loadWordsFromAssets() {
+        ArrayList<String> wordList = new ArrayList<>();
+        try {
+            AssetManager assetManager = getAssets();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(assetManager.open("words.txt")));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                if (!line.trim().isEmpty()) {
+                    wordList.add(line.trim());
+                }
+            }
+            reader.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return wordList;
+    }
+
+    private void findViews() {
+        welcome = findViewById(R.id.welcome);
+        wordgen = findViewById(R.id.wordGenerate);
+        playerGuess = findViewById(R.id.playerGuess);
+        givenWord = findViewById(R.id.givenWord);
+        score_val = findViewById(R.id.score_val);
+        life_val = findViewById(R.id.life_val);
+        finalResultTextView = findViewById(R.id.finalResult);
+        playerWord = findViewById(R.id.playerWord);
+        checkButton = findViewById(R.id.check);
+        playAgain = findViewById(R.id.playAgain);
+        exit = findViewById(R.id.exit);
+        newButton = findViewById(R.id.newBtn);
+        scoreLife = findViewById(R.id.scoreLife);
     }
 }

@@ -9,18 +9,18 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="25dp"
         android:alpha="0.65"
         android:background="@color/white"
-        android:layout_marginBottom="25dp"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/purple"
+            android:padding="20dp"
             android:text="Make Your Work List"
             android:textAlignment="center"
-            android:padding="20dp"
             android:textColor="@color/white"
             android:textSize="30dp"
             android:textStyle="bold" />
@@ -61,13 +61,14 @@
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:layout_margin="10dp">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=" Total Added Task: "
                 android:textColor="@color/black"
                 android:textSize="18dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/taskCount"
@@ -75,8 +76,8 @@
                 android:layout_height="wrap_content"
                 android:text="00"
                 android:textColor="@color/red"
-                android:textStyle="bold"
-                android:textSize="18dp"/>
+                android:textSize="18dp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -92,7 +93,7 @@
                 android:text=" Task Deleted: "
                 android:textColor="@color/black"
                 android:textSize="18dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/deletedTaskCount"
@@ -100,8 +101,8 @@
                 android:layout_height="wrap_content"
                 android:text="00"
                 android:textColor="@color/red"
-                android:textStyle="bold"
-                android:textSize="18dp"/>
+                android:textSize="18dp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -117,7 +118,7 @@
                 android:text=" Completed Task: "
                 android:textColor="@color/black"
                 android:textSize="18dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/taskCompleteCount"
@@ -125,8 +126,8 @@
                 android:layout_height="wrap_content"
                 android:text="00"
                 android:textColor="@color/red"
-                android:textStyle="bold"
-                android:textSize="18dp"/>
+                android:textSize="18dp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -142,7 +143,7 @@
                 android:text=" Task Remaining: "
                 android:textColor="@color/black"
                 android:textSize="18dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/remainingTaskCount"
@@ -150,8 +151,8 @@
                 android:layout_height="wrap_content"
                 android:text="00"
                 android:textColor="@color/red"
-                android:textStyle="bold"
-                android:textSize="18dp" />
+                android:textSize="18dp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 

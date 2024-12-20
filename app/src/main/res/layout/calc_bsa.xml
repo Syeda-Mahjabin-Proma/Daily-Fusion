@@ -9,9 +9,9 @@
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:cardElevation="30dp"
+        android:alpha="0.79"
         app:cardCornerRadius="20dp"
-        android:alpha="0.79">
+        app:cardElevation="30dp">
 
         <ScrollView
             android:layout_width="wrap_content"
@@ -29,7 +29,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16sp"
                     android:background="@color/white"
-                    android:text="Body Surface Area"
+                    android:text=" Body Surface Area "
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="25dp"
@@ -49,29 +49,29 @@
                         android:layout_height="wrap_content"
                         android:text="Enter Height: "
                         android:textAlignment="center"
-                        android:textSize="17sp"
                         android:textColor="@color/black"
-                        android:textStyle="bold"/>
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
 
                     <EditText
                         android:id="@+id/height_feet"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Feet"
-                        android:textColorHint="@color/hint_black"
                         android:inputType="number"
                         android:textAlignment="center"
-                        android:textStyle="bold"/>
+                        android:textColorHint="@color/hint_black"
+                        android:textStyle="bold" />
 
                     <EditText
                         android:id="@+id/height_inch"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Inch"
-                        android:textColorHint="@color/hint_black"
                         android:inputType="numberDecimal"
                         android:textAlignment="center"
-                        android:textStyle="bold"/>
+                        android:textColorHint="@color/hint_black"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -85,10 +85,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Enter Weight: "
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
                         android:textAlignment="center"
-                        android:textSize="17sp" />
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
 
 
                     <EditText
@@ -96,24 +96,24 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Kilogram"
-                        android:textColorHint="@color/hint_black"
                         android:inputType="numberDecimal"
                         android:padding="8dp"
-                        android:textStyle="bold"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textColorHint="@color/hint_black"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
                 <Button
                     android:id="@+id/calculate"
-                    android:layout_width= "wrap_content"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="30dp"
+                    android:backgroundTint="@color/black"
                     android:text=" CALCULATE "
                     android:textColor="@color/white"
                     android:textSize="18sp"
-                    app:cornerRadius="0dp"
-                    android:layout_marginTop="10dp"
-                    android:backgroundTint="@color/black"/>
+                    app:cornerRadius="5dp" />
 
                 <TextView
                     android:id="@+id/reset_text"

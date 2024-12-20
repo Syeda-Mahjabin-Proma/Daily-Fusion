@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class workList extends Activity {
+public class toDoView extends Activity {
 
     private LinearLayout allTask;
     private TextView taskCount, deletedTaskCount, taskCompleteCount, remainingTaskCount;
@@ -21,7 +21,7 @@ public class workList extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.worklist);
+        setContentView(R.layout.todo);
         findViews();
         addNewTask();
         deleteAllTask();
@@ -48,7 +48,7 @@ public class workList extends Activity {
                 totalTasks++;
                 updateTaskCounts();
 
-                LinearLayout taskLayout = new LinearLayout(workList.this);
+                LinearLayout taskLayout = new LinearLayout(toDoView.this);
                 taskLayout.setOrientation(LinearLayout.HORIZONTAL);
                 taskLayout.setPadding(10, 10, 10, 10);
                 taskLayout.setBackgroundColor(Color.parseColor("#000000"));
@@ -59,7 +59,7 @@ public class workList extends Activity {
                 params.setMargins(0, 10, 0, 10);
                 taskLayout.setLayoutParams(params);
 
-                CheckBox checkBox = new CheckBox(workList.this);
+                CheckBox checkBox = new CheckBox(toDoView.this);
                 LinearLayout.LayoutParams checkBoxParams = new LinearLayout.LayoutParams(
                         LinearLayout.LayoutParams.WRAP_CONTENT,
                         LinearLayout.LayoutParams.WRAP_CONTENT
@@ -75,7 +75,7 @@ public class workList extends Activity {
                     updateTaskCounts();
                 });
 
-                TextView taskText = new TextView(workList.this);
+                TextView taskText = new TextView(toDoView.this);
                 taskText.setText("Task " + totalTasks);
                 taskText.setTextColor(Color.parseColor("#FFFFFF"));
                 taskText.setPadding(20, 0, 20, 0);
@@ -87,7 +87,7 @@ public class workList extends Activity {
                 taskTextParams.gravity = Gravity.CENTER_VERTICAL;
                 taskText.setLayoutParams(taskTextParams);
 
-                Button editButton = new Button(workList.this);
+                Button editButton = new Button(toDoView.this);
                 editButton.setText("Edit");
                 editButton.setTextSize(15);
                 LinearLayout.LayoutParams editButtonParams = new LinearLayout.LayoutParams(
@@ -103,7 +103,7 @@ public class workList extends Activity {
                     }
                 });
 
-                Button deleteButton = new Button(workList.this);
+                Button deleteButton = new Button(toDoView.this);
                 deleteButton.setText("Delete");
                 deleteButton.setTextSize(15);
                 LinearLayout.LayoutParams deleteButtonParams = new LinearLayout.LayoutParams(
@@ -135,10 +135,10 @@ public class workList extends Activity {
     }
 
     private void editTask(TextView taskText) {
-        android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(workList.this);
+        android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(toDoView.this);
         builder.setTitle("Edit Task");
 
-        final EditText input = new EditText(workList.this);
+        final EditText input = new EditText(toDoView.this);
         input.setText(taskText.getText());
         builder.setView(input);
 

@@ -21,24 +21,8 @@ public class tictactoe extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.tictactoe);
-        
-        boxes[0] = findViewById(R.id.box1);
-        boxes[1] = findViewById(R.id.box2);
-        boxes[2] = findViewById(R.id.box3);
-        boxes[3] = findViewById(R.id.box4);
-        boxes[4] = findViewById(R.id.box5);
-        boxes[5] = findViewById(R.id.box6);
-        boxes[6] = findViewById(R.id.box7);
-        boxes[7] = findViewById(R.id.box8);
-        boxes[8] = findViewById(R.id.box9);
-        player1Score = findViewById(R.id.player1_score);
-        player2Score = findViewById(R.id.player2_score);
-        playAgainButton = findViewById(R.id.play_again);
-        endGameButton = findViewById(R.id.end_game);
-        resetButton = findViewById(R.id.start_over);
-
-        
+        setContentView(R.layout.play_tic_tac_toe);
+        findViews();
         for (int i = 0; i < 9; i++) {
             final int index = i;
             boxes[i].setOnClickListener(new View.OnClickListener() {
@@ -81,7 +65,8 @@ public class tictactoe extends AppCompatActivity {
             boxes[index].setText("X");
             gameState[index] = 1;
             currentPlayer = 2;
-        } else {
+        }
+        else {
             boxes[index].setText("O");
             gameState[index] = 2;
             currentPlayer = 1;
@@ -143,5 +128,22 @@ public class tictactoe extends AppCompatActivity {
         }
         gameActive = true;
         currentPlayer = 1;
+    }
+
+    private void findViews(){
+        boxes[0] = findViewById(R.id.box1);
+        boxes[1] = findViewById(R.id.box2);
+        boxes[2] = findViewById(R.id.box3);
+        boxes[3] = findViewById(R.id.box4);
+        boxes[4] = findViewById(R.id.box5);
+        boxes[5] = findViewById(R.id.box6);
+        boxes[6] = findViewById(R.id.box7);
+        boxes[7] = findViewById(R.id.box8);
+        boxes[8] = findViewById(R.id.box9);
+        player1Score = findViewById(R.id.player1_score);
+        player2Score = findViewById(R.id.player2_score);
+        playAgainButton = findViewById(R.id.play_again);
+        endGameButton = findViewById(R.id.end_game);
+        resetButton = findViewById(R.id.start_over);
     }
 }

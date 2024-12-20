@@ -1,6 +1,5 @@
 package com.example.gameplay;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;

@@ -1,21 +1,26 @@
-package com.example.gameplay;
+package com.example.gameplay.View;
 
-import androidx.appcompat.app.AppCompatActivity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class choose_work extends AppCompatActivity {
-    private Button playGame, weightCheck, todo, motivation, moneyCalculate;
+import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.gameplay.Controller.chooseWorkController;
+import com.example.gameplay.R;
+
+public class chooseWorkView extends AppCompatActivity {
+    private Button playGame, weightCheck, todo, motivation, moneyCalculate;
+    private chooseWorkController controller;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.choose_work);
+
         findViews();
-        onClick();
+        controller = new chooseWorkController(this);
+        setUpButtonOnClickListener();
     }
 
     private void findViews() {
@@ -26,37 +31,39 @@ public class choose_work extends AppCompatActivity {
         moneyCalculate = findViewById(R.id.moneyCalculate);
     }
 
-    private void onClick() {
+    private void setUpButtonOnClickListener() {
         playGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(choose_work.this, gameplay.class));
+                controller.handlePlayGame();
             }
         });
 
         weightCheck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(choose_work.this, health_check.class));
+                controller.handleWeightCheck();
             }
         });
+
         todo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(choose_work.this, workList.class));
-
+                controller.handleWorkList();
             }
         });
+
         motivation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(choose_work.this, motivate.class));
+                controller.handleMotivation();
             }
         });
+
         moneyCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(choose_work.this, calcMoney.class));
+                controller.handleMoneyCalculate();
             }
         });
     }

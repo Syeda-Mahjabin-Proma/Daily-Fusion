@@ -16,8 +16,9 @@
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="20dp"
-            app:cardBackgroundColor="@color/white">
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="20dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -28,16 +29,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    app:cardCornerRadius="10dp"
-                    app:cardBackgroundColor="@color/black">
+                    app:cardBackgroundColor="@color/black"
+                    app:cardCornerRadius="10dp">
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Don't Feel Low, Work Hard \n Every Step Counts"
+                        android:layout_margin="10dp"
                         android:gravity="center"
+                        android:text="Don't Feel Low, Work Hard \n Every Step Counts"
                         android:textColor="@color/material_dynamic_tertiary70"
                         android:textSize="20sp"
-                        android:layout_margin="10dp"
                         android:textStyle="bold" />
                 </androidx.cardview.widget.CardView>
 
@@ -45,22 +47,22 @@
                     android:layout_width="match_parent"
                     android:layout_height="300dp"
                     android:layout_margin="15dp"
+                    app:cardBackgroundColor="@color/hint_black"
                     app:cardCornerRadius="20dp"
-                    app:cardElevation="10dp"
-                    app:cardBackgroundColor="@color/hint_black">
+                    app:cardElevation="10dp">
 
                     <TextView
                         android:id="@+id/showQuote"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:background="@drawable/back"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:background="@drawable/back"
                         android:text="dfdf dfdf dfdf"
                         android:textColor="#F28775"
-                        android:textStyle="bold|italic"
-                        android:textSize="20sp" />
+                        android:textSize="20sp"
+                        android:textStyle="bold|italic" />
 
 
                 </androidx.cardview.widget.CardView>
@@ -75,22 +77,22 @@
                         android:id="@+id/more"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
                         android:backgroundTint="@color/black"
                         android:text="Another\nQuote"
                         android:textAlignment="center"
                         android:textColor="@color/material_dynamic_tertiary70"
                         android:textSize="20sp"
-                        android:layout_marginHorizontal="10dp"
                         app:cornerRadius="10dp" />
 
                     <Button
                         android:id="@+id/exit"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
                         android:backgroundTint="@color/black"
                         android:text="Exit And\nWork Now"
                         android:textColor="@color/material_dynamic_tertiary70"
-                        android:layout_marginHorizontal="10dp"
                         android:textSize="20sp"
                         app:cornerRadius="10dp" />
                 </LinearLayout>

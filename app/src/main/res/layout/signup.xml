@@ -10,8 +10,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:alpha="0.9"
-        app:cardElevation="30dp"
-        app:cardCornerRadius="20dp">
+        app:cardCornerRadius="20dp"
+        app:cardElevation="30dp">
 
         <ScrollView
             android:layout_width="wrap_content"
@@ -41,7 +41,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16sp"
                     android:hint="Write Your Name"
-                    android:inputType="text"/>
+                    android:inputType="text" />
 
                 <EditText
                     android:id="@+id/userEmail"
@@ -49,7 +49,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16sp"
                     android:hint="Write Your Email"
-                    android:inputType="textEmailAddress"/>
+                    android:inputType="textEmailAddress" />
 
                 <EditText
                     android:id="@+id/userPass"
@@ -57,7 +57,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16sp"
                     android:hint="Write Your Password"
-                    android:inputType="textPassword"/>
+                    android:inputType="textPassword" />
 
                 <EditText
                     android:id="@+id/userPassConf"
@@ -65,7 +65,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16sp"
                     android:hint="Re-write Your Password"
-                    android:inputType="textPassword"/>
+                    android:inputType="textPassword" />
 
                 <CheckBox
                     android:id="@+id/userInfoCheck"
@@ -77,14 +77,14 @@
 
                 <Button
                     android:id="@+id/userSignupBtn"
-                    android:layout_width= "wrap_content"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="30dp"
+                    android:backgroundTint="@color/black"
                     android:text="Create Account"
                     android:textColor="@color/white"
                     android:textSize="18sp"
-                    app:cornerRadius="0dp"
-                    android:backgroundTint="@color/black"/>
+                    app:cornerRadius="0dp" />
 
             </LinearLayout>
 

@@ -23,22 +23,22 @@
         </activity>
         <activity android:name=".signup" />
         <activity android:name=".login" />
-        <activity android:name=".choose_work" />
-        <activity android:name=".calcBMI" />
-        <activity android:name=".health_check" />
-        <activity android:name=".calcBMR" />
-        <activity android:name=".water_need" />
-        <activity android:name=".calcBSA" />
-        <activity android:name=".calories_burn" />
-        <activity android:name=".gameplay" />
-        <activity android:name=".right_wrong" />
+        <activity android:name=".View.chooseWorkView" />
+        <activity android:name=".View.calcBmiView" />
+        <activity android:name=".View.healthCheckView" />
+        <activity android:name=".View.calcBmrView" />
+        <activity android:name=".View.calcWaterView" />
+        <activity android:name=".View.calcBsaView" />
+        <activity android:name=".View.calcCalBurntView" />
+        <activity android:name=".View.gamePlayView" />
+        <activity android:name=".View.gameRightWrongView" />
         <activity android:name=".tictactoe" />
-        <activity android:name=".memory" />
+        <activity android:name=".View.gameMemoryView" />
         <activity android:name=".word_game" />
         <activity android:name=".rock_paper_scissor" />
         <activity android:name=".calcMoney" />
         <activity android:name=".motivate" />
-        <activity android:name=".workList" />
+        <activity android:name="toDoView" />
     </application>
 
 </manifest>

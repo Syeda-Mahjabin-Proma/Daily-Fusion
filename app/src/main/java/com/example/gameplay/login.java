@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.gameplay.View.chooseWorkView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -61,7 +62,7 @@ public class login extends AppCompatActivity {
                         FirebaseUser user = mAuth.getCurrentUser();
                         if (user != null && user.isEmailVerified()) {
                             Toast.makeText(login.this, "Login successful!", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(login.this, choose_work.class));
+                            startActivity(new Intent(login.this, chooseWorkView.class));
                             finish();
                         } else if (user != null && !user.isEmailVerified()) {
                             Toast.makeText(login.this, "Please verify your email before logging in.", Toast.LENGTH_LONG).show();

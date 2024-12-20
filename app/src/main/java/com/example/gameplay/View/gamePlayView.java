@@ -1,21 +1,26 @@
-package com.example.gameplay;
+package com.example.gameplay.View;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class gameplay extends AppCompatActivity {
-    private Button numberChoose, tictactoe, memory, word, typing;
+import com.example.gameplay.Controller.gamePlayController;
+import com.example.gameplay.R;
 
+public class gamePlayView extends AppCompatActivity {
+    private Button numberChoose, tictactoe, memory, word, rockPaperScissor;
+
+    private gamePlayController controller;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_play);
+
         findViews();
+        controller = new gamePlayController(this);
         onClick();
     }
 
@@ -24,40 +29,42 @@ public class gameplay extends AppCompatActivity {
         tictactoe = findViewById(R.id.tictactoe);
         memory = findViewById(R.id.memory);
         word = findViewById(R.id.word);
-        typing = findViewById(R.id.typing);
+        rockPaperScissor = findViewById(R.id.rockPaperScissor);
     }
 
     private void onClick() {
         numberChoose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(gameplay.this, right_wrong.class));
+                controller.handleRightWrong();
             }
         });
 
         tictactoe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(gameplay.this, tictactoe.class));
+                controller.handleTicTacToe();
             }
         });
+
         memory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(gameplay.this, memory.class));
-
+                controller.handleMemoryGame();
             }
         });
+
         word.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(gameplay.this, word_game.class));
+                controller.handleWordGame();
             }
         });
-        typing.setOnClickListener(new View.OnClickListener() {
+
+        rockPaperScissor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(gameplay.this, rock_paper_scissor.class));
+                controller.handleRockPaperScissor();
             }
         });
     }
