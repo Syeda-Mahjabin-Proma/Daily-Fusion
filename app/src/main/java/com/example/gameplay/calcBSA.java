@@ -43,8 +43,8 @@ public class calcBSA extends AppCompatActivity {
                 }
                 else {
                     int feet = Integer.parseInt(feetText);
-                    int inch = Integer.parseInt(inchText);
-                    int weight = Integer.parseInt(weightText);
+                    float inch = Float.parseFloat(inchText);
+                    float weight = Float.parseFloat(weightText);
                     double total_height = ((feet * 12) + inch) * 2.54;
                     double bsa = Math.sqrt((weight * total_height)/3600);
                     String bsaString = String.format("%.2f", bsa);

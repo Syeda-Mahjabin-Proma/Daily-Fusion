@@ -42,9 +42,9 @@ public class calories_burn extends AppCompatActivity {
                     reset_text.setText("Enter Values Properly");
                 }
                 else {
-                    int weight = Integer.parseInt(weightText);
+                    float weight = Float.parseFloat(weightText);
                     int met = Integer.parseInt(metText);
-                    int duration = Integer.parseInt(durationText);
+                    float duration = Float.parseFloat(durationText);
                     double cal_burn = weight * met * duration;
                     String calString = String.format("%.2f", cal_burn);
                     reset_text.setText("You Burnt " + calString + " Calories Today");

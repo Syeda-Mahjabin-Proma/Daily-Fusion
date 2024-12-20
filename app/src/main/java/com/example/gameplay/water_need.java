@@ -1,8 +1,6 @@
 package com.example.gameplay;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -30,14 +28,13 @@ public class water_need extends AppCompatActivity {
 
     private void setUpButtonOnClickListener() {
         calculate.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View v) {
                 String weightText = weight.getText().toString();
                 if (weightText.isEmpty()){
                     result.setText("Weight Missing!");
                 } else {
-                    int weight = Integer.parseInt(weightText);
+                    float weight = Float.parseFloat(weightText);
                     double water = weight * 0.033;
                     String waterString = String.format("%.3f", water);
                     result.setText("You Need " + waterString + "L Water Daily.");
@@ -45,6 +42,4 @@ public class water_need extends AppCompatActivity {
             }
         });
     }
-
-
 }

@@ -66,10 +66,11 @@ public class calcBMI extends AppCompatActivity {
         double[] bmi_height;
         if (feetText.isEmpty() || inchText.isEmpty() || weightText.isEmpty()) {
             bmi_height = new double[]{0, 0};
-        } else {
+        }
+        else {
             int feet = Integer.parseInt(feetText);
-            int inch = Integer.parseInt(inchText);
-            int weight = Integer.parseInt(weightText);
+            float inch = Float.parseFloat(inchText);
+            float weight = Float.parseFloat(weightText);
             double total_height = ((feet * 12) + inch) * 0.0254;
             double bmi = ((weight / (total_height * total_height)));
             bmi_height = new double[]{bmi, total_height};
@@ -112,17 +113,6 @@ public class calcBMI extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putString("resetText", reset_text.getText().toString());
-    }
 
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        String resetText = savedInstanceState.getString("resetText");
-        reset_text.setText(resetText);
-    }
 
 }

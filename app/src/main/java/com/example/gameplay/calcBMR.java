@@ -69,8 +69,8 @@ public class calcBMR extends AppCompatActivity {
             bmr_height = new double[]{0, 0};
         } else {
             int feet = Integer.parseInt(feetText);
-            int inch = Integer.parseInt(inchText);
-            int weight = Integer.parseInt(weightText);
+            float inch = Float.parseFloat(inchText);
+            float weight = Float.parseFloat(weightText);
             int age = Integer.parseInt(ageText);
             double total_height = ((feet * 12) + inch) * 0.0254;
             double bmr = 0;
@@ -97,6 +97,5 @@ public class calcBMR extends AppCompatActivity {
         }
         Toast.makeText(calcBMR.this, "Your BMR Calculation is Done!!!", Toast.LENGTH_SHORT).show();
     }
-
 
 }
