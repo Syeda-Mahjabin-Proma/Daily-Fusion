@@ -1,30 +1,41 @@
-package com.example.gameplay;
+package com.example.gameplay.View;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class calcMoney extends AppCompatActivity {
+import com.example.gameplay.R;
+
+public class moneyChangeView extends AppCompatActivity {
     private TextView change;
     private TextView taka_1000, taka_500, taka_200, taka_100,
             taka_50, taka_20, taka_10, taka_5, taka_2, taka_1;
     private EditText bill, paid;
-    private Button calc;
-    private LinearLayout allTaka;
+    private Button calc, reCalc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.calc_money);
+        setContentView(R.layout.money_change);
         findViews();
         noteCalc();
+        notereCalc();
 
+    }
+
+    private void notereCalc() {
+        reCalc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+                startActivity(getIntent());
+            }
+        });
     }
 
     private void noteCalc() {
@@ -33,7 +44,7 @@ public class calcMoney extends AppCompatActivity {
             public void onClick(View v) {
                 int moneyChange = calcChange();
                 if (moneyChange > 0) {
-                    Toast.makeText(calcMoney.this, "Calculation Done!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(moneyChangeView.this, "Done", Toast.LENGTH_SHORT).show();
                 }
 
                 int note_1000 = Math.floorDiv(moneyChange, 1000);
@@ -104,6 +115,7 @@ public class calcMoney extends AppCompatActivity {
         bill = findViewById(R.id.bill);
         paid = findViewById(R.id.paid);
         calc = findViewById(R.id.calc);
+        reCalc = findViewById(R.id.recalc);
         taka_1000 = findViewById(R.id.taka_1000);
         taka_500 = findViewById(R.id.taka_500);
         taka_200 = findViewById(R.id.taka_200);

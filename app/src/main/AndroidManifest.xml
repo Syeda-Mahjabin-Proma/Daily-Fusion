@@ -36,7 +36,7 @@
         <activity android:name=".View.gameMemoryView" />
         <activity android:name=".View.gameWordScrambleView" />
         <activity android:name=".View.gameRockPaperScissorView" />
-        <activity android:name=".calcMoney" />
+        <activity android:name=".View.moneyChangeView" />
         <activity android:name=".View.motivationView" />
         <activity android:name="toDoView" />
     </application>
