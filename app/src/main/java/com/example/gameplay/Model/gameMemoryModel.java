@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class gameMemoryModel {
-    private ArrayList<Integer> values;
+    private final ArrayList<Integer> values;
     private int score;
     private int lives;
 

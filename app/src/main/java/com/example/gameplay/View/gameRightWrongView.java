@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -48,15 +49,14 @@ public class gameRightWrongView extends AppCompatActivity {
         val3.setText(String.valueOf(controller.getThirdVal()));
         scoreVal.setText(String.valueOf(controller.getScore()));
         lifeVal.setText(String.valueOf(controller.getLife()));
-        resultText.setText("");
     }
 
     private void handleAnswer(boolean userAnswer) {
         boolean isCorrect = controller.checkUserAnswer(userAnswer);
         if (isCorrect) {
-            resultText.setText("Right Answer!!!");
+            Toast.makeText(this, "Right Answer", Toast.LENGTH_SHORT).show();
         } else {
-            resultText.setText("Wrong Answer!!!");
+            Toast.makeText(this, "Wrong Answer", Toast.LENGTH_SHORT).show();
         }
 
         if (controller.isGameOver()) {
@@ -72,7 +72,6 @@ public class gameRightWrongView extends AppCompatActivity {
         lifeVal.setText("0");
         yesButton.setEnabled(false);
         noButton.setEnabled(false);
-
         Button restartButton = new Button(this);
         restartButton.setText("Start Again");
         resultLayout.addView(restartButton);

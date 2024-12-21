@@ -32,12 +32,12 @@
         <activity android:name=".View.calcCalBurntView" />
         <activity android:name=".View.gamePlayView" />
         <activity android:name=".View.gameRightWrongView" />
-        <activity android:name=".tictactoe" />
+        <activity android:name=".View.gameTicTacToeView" />
         <activity android:name=".View.gameMemoryView" />
-        <activity android:name=".word_game" />
-        <activity android:name=".rock_paper_scissor" />
+        <activity android:name=".View.gameWordScrambleView" />
+        <activity android:name=".View.gameRockPaperScissorView" />
         <activity android:name=".calcMoney" />
-        <activity android:name=".motivate" />
+        <activity android:name=".View.motivationView" />
         <activity android:name="toDoView" />
     </application>
 

@@ -20,10 +20,10 @@ import java.util.Random;
 
 public class gameMemoryView extends AppCompatActivity {
 
+    private final Handler handler = new Handler(Looper.getMainLooper());
     private TextView val1, val2, val3, val4, val5, scoreVal, lifeVal, resultText, careful, scoreText, lifeText, divider;
     private Button b1, b2, b3;
     private LinearLayout allResult;
-    private final Handler handler = new Handler(Looper.getMainLooper());
     private gameMemoryController controller;
 
     @Override
@@ -31,7 +31,6 @@ public class gameMemoryView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.play_memory_game);
 
-        // Initialize Model and Controller
         gameMemoryModel model = new gameMemoryModel();
         controller = new gameMemoryController(model);
 
@@ -61,6 +60,7 @@ public class gameMemoryView extends AppCompatActivity {
     private void startGame() {
         controller.generateRandomValues();
         displayValues();
+        hideButtons();
         setButtonsEnabled(false);
 
         handler.postDelayed(() -> {
@@ -70,6 +70,12 @@ public class gameMemoryView extends AppCompatActivity {
         }, 3000);
 
         setupButtonListeners();
+    }
+
+    private void hideButtons() {
+        b1.setText(" X ");
+        b3.setText(" Y ");
+        b2.setText(" Z ");
     }
 
     private void displayValues() {
@@ -135,7 +141,6 @@ public class gameMemoryView extends AppCompatActivity {
     }
 
     private void endGame() {
-        // Disable buttons and show game over message
         careful.setVisibility(View.GONE);
         val1.setVisibility(View.GONE);
         val2.setVisibility(View.GONE);

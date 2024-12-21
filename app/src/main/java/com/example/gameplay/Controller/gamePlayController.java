@@ -4,11 +4,11 @@ package com.example.gameplay.Controller;
 import android.content.Context;
 import android.content.Intent;
 
-import com.example.gameplay.View.gameRightWrongView;
 import com.example.gameplay.View.gameMemoryView;
-import com.example.gameplay.rock_paper_scissor;
-import com.example.gameplay.tictactoe;
-import com.example.gameplay.word_game;
+import com.example.gameplay.View.gameRightWrongView;
+import com.example.gameplay.View.gameRockPaperScissorView;
+import com.example.gameplay.View.gameTicTacToeView;
+import com.example.gameplay.View.gameWordScrambleView;
 
 public class gamePlayController {
     private final Context context;
@@ -22,11 +22,11 @@ public class gamePlayController {
     }
 
     public void handleTicTacToe() {
-        context.startActivity(new Intent(context, tictactoe.class));
+        context.startActivity(new Intent(context, gameTicTacToeView.class));
     }
 
     public void handleWordGame() {
-        context.startActivity(new Intent(context, word_game.class));
+        context.startActivity(new Intent(context, gameWordScrambleView.class));
     }
 
     public void handleMemoryGame() {
@@ -34,7 +34,7 @@ public class gamePlayController {
     }
 
     public void handleRockPaperScissor() {
-        context.startActivity(new Intent(context, rock_paper_scissor.class));
+        context.startActivity(new Intent(context, gameRockPaperScissorView.class));
     }
 
 }

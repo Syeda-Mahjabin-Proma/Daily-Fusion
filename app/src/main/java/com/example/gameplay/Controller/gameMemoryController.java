@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class gameMemoryController {
     private final gameMemoryModel model;
 
-    public gameMemoryController (gameMemoryModel model) {
+    public gameMemoryController(gameMemoryModel model) {
         this.model = model;
     }
 

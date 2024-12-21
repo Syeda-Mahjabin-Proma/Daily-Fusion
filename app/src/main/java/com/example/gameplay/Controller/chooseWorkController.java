@@ -5,8 +5,8 @@ import android.content.Intent;
 
 import com.example.gameplay.View.gamePlayView;
 import com.example.gameplay.View.healthCheckView;
+import com.example.gameplay.View.motivationView;
 import com.example.gameplay.calcMoney;
-import com.example.gameplay.motivate;
 import com.example.gameplay.toDoView;
 
 public class chooseWorkController {
@@ -29,7 +29,7 @@ public class chooseWorkController {
     }
 
     public void handleMotivation() {
-        context.startActivity(new Intent(context, motivate.class));
+        context.startActivity(new Intent(context, motivationView.class));
     }
 
     public void handleMoneyCalculate() {
