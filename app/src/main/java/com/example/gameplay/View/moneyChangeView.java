@@ -1,113 +1,168 @@
 package com.example.gameplay.View;
 
+import android.graphics.Color;
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
-
+import com.example.gameplay.Controller.moneyChangeController;
+import com.example.gameplay.Model.moneyChangeModel;
 import com.example.gameplay.R;
 
-public class moneyChangeView extends AppCompatActivity {
+public class moneyChangeView extends Activity {
     private TextView change;
     private TextView taka_1000, taka_500, taka_200, taka_100,
             taka_50, taka_20, taka_10, taka_5, taka_2, taka_1;
     private EditText bill, paid;
     private Button calc, reCalc;
+    private moneyChangeController controller;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.money_change);
         findViews();
-        noteCalc();
-        notereCalc();
 
+        moneyChangeModel model = new moneyChangeModel();
+        controller = new moneyChangeController(model, this);
+
+        setUpListeners();
     }
 
-    private void notereCalc() {
-        reCalc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-                startActivity(getIntent());
-            }
-        });
-    }
-
-    private void noteCalc() {
+    private void setUpListeners() {
         calc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int moneyChange = calcChange();
-                if (moneyChange > 0) {
-                    Toast.makeText(moneyChangeView.this, "Done", Toast.LENGTH_SHORT).show();
-                }
+                controller.calculateChange();
+            }
+        });
 
-                int note_1000 = Math.floorDiv(moneyChange, 1000);
-                int change = moneyChange % 1000;
-                taka_1000.setText("1000: " + note_1000);
-
-                int note_500 = Math.floorDiv(change, 500);
-                change = change % 500;
-                taka_500.setText("500: " + note_500);
-
-                int note_200 = Math.floorDiv(change, 200);
-                change = change % 200;
-                taka_200.setText("200: " + note_200);
-
-                int note_100 = Math.floorDiv(change, 100);
-                change = change % 100;
-                taka_100.setText("100: " + note_100);
-
-                int note_50 = Math.floorDiv(change, 50);
-                change = change % 50;
-                taka_50.setText("50: " + note_50);
-
-                int note_20 = Math.floorDiv(change, 20);
-                change = change % 20;
-                taka_20.setText("20: " + note_20);
-
-                int note_10 = Math.floorDiv(change, 10);
-                change = change % 10;
-                taka_10.setText("10: " + note_10);
-
-                int note_5 = Math.floorDiv(change, 5);
-                change = change % 5;
-                taka_5.setText("5: " + note_5);
-
-                int note_2 = Math.floorDiv(change, 2);
-                change = change % 2;
-                taka_2.setText("2: " + note_2);
-
-                int note_1 = Math.floorDiv(change, 1);
-                taka_1.setText("1: " + note_1);
+        reCalc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bill.setText("");
+                paid.setText("");
+                change.setText("00 TAKA");
+                taka_1000.setText("1000: 0");
+                taka_1000.setTextColor(Color.BLACK);
+                taka_500.setText("500: 0");
+                taka_500.setTextColor(Color.BLACK);
+                taka_200.setText("200: 0");
+                taka_200.setTextColor(Color.BLACK);
+                taka_100.setText("100: 0");
+                taka_100.setTextColor(Color.BLACK);
+                taka_50.setText("50: 0");
+                taka_50.setTextColor(Color.BLACK);
+                taka_20.setText("20: 0");
+                taka_20.setTextColor(Color.BLACK);
+                taka_10.setText("10: 0");
+                taka_10.setTextColor(Color.BLACK);
+                taka_5.setText("5: 0");
+                taka_5.setTextColor(Color.BLACK);
+                taka_2.setText("2: 0");
+                taka_2.setTextColor(Color.BLACK);
+                taka_1.setText("1: 0");
+                taka_1.setTextColor(Color.BLACK);
+                Toast.makeText(moneyChangeView.this, "Reset Done!", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    private int calcChange() {
-        int totalChange;
-        String totalBill = bill.getText().toString();
-        String totalPaid = paid.getText().toString();
-
-        if (totalBill.isEmpty() || totalPaid.isEmpty()) {
-            totalChange = 0;
-            Toast.makeText(this, "Enter Total Bill & Total Paid Properly", Toast.LENGTH_SHORT).show();
+    public int getBillAmount() {
+        String billText = bill.getText().toString();
+        if (!billText.isEmpty()) {
+            return Integer.parseInt(billText);
         } else {
-            int intTotalBill = Integer.parseInt(totalBill);
-            int intTotalPaid = Integer.parseInt(totalPaid);
-            totalChange = intTotalPaid - intTotalBill;
-            if (totalChange < 0) {
-                totalChange = 0;
-                Toast.makeText(this, "Re-Check!!!", Toast.LENGTH_SHORT).show();
-            }
+            Toast.makeText(this, "Please Enter Total Bill", Toast.LENGTH_SHORT).show();
+            return 0;
         }
-        change.setText(String.valueOf(totalChange));
-        return totalChange;
+    }
+
+    public int getPaidAmount() {
+        String paidText = paid.getText().toString();
+        if (!paidText.isEmpty()) {
+            return Integer.parseInt(paidText);
+        } else {
+            Toast.makeText(this, "Enter Paid Amount", Toast.LENGTH_SHORT).show();
+            return 0;
+        }
+    }
+
+    public void updateNotes(int[] notes) {
+        int getChange = controller.getChange();
+        change.setText(getChange + " TAKA ");
+        taka_1000.setText("1000: " + notes[0]);
+        taka_500.setText("500: " + notes[1]);
+        taka_200.setText("200: " + notes[2]);
+        taka_100.setText("100: " + notes[3]);
+        taka_50.setText("50: " + notes[4]);
+        taka_20.setText("20: " + notes[5]);
+        taka_10.setText("10: " + notes[6]);
+        taka_5.setText("5: " + notes[7]);
+        taka_2.setText("2: " + notes[8]);
+        taka_1.setText("1: " + notes[9]);
+        
+        if (notes[0] != 0) {
+            taka_1000.setTextColor(Color.RED);
+        } else {
+            taka_1000.setTextColor(Color.BLACK);
+        }
+        if (notes[1] != 0) {
+            taka_500.setTextColor(Color.RED);
+        } else {
+            taka_500.setTextColor(Color.BLACK);
+        }
+
+        if (notes[2] != 0) {
+            taka_200.setTextColor(Color.RED);
+        } else {
+            taka_200.setTextColor(Color.BLACK);
+        }
+
+        if (notes[3] != 0) {
+            taka_100.setTextColor(Color.RED);
+        } else {
+            taka_100.setTextColor(Color.BLACK);
+        }
+
+        if (notes[4] != 0) {
+            taka_50.setTextColor(Color.RED);
+        } else {
+            taka_50.setTextColor(Color.BLACK);
+        }
+        if (notes[5] != 0) {
+            taka_20.setTextColor(Color.RED);
+        } else {
+            taka_20.setTextColor(Color.BLACK);
+        }
+        if (notes[6] != 0) {
+            taka_10.setTextColor(Color.RED);
+        } else {
+            taka_10.setTextColor(Color.BLACK);
+        }
+        if (notes[7] != 0) {
+            taka_5.setTextColor(Color.RED);
+        } else {
+            taka_5.setTextColor(Color.BLACK);
+        }
+        if (notes[8] != 0) {
+            taka_2.setTextColor(Color.RED);
+        } else {
+            taka_2.setTextColor(Color.BLACK);
+        }
+        if (notes[9] != 0) {
+            taka_1.setTextColor(Color.RED);
+        } else {
+            taka_1.setTextColor(Color.BLACK);
+        }
+
+
+        if (getChange != 0){
+            Toast.makeText(this, "Done", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void findViews() {
