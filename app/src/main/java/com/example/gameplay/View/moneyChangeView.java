@@ -104,7 +104,7 @@ public class moneyChangeView extends Activity {
         taka_5.setText("5: " + notes[7]);
         taka_2.setText("2: " + notes[8]);
         taka_1.setText("1: " + notes[9]);
-        
+
         if (notes[0] != 0) {
             taka_1000.setTextColor(Color.RED);
         } else {

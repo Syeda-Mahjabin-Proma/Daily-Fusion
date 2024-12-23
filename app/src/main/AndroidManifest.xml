@@ -38,7 +38,7 @@
         <activity android:name=".View.gameRockPaperScissorView" />
         <activity android:name=".View.moneyChangeView" />
         <activity android:name=".View.motivationView" />
-        <activity android:name="toDoView" />
+        <activity android:name=".View.toDoView" />
     </application>
 
 </manifest>

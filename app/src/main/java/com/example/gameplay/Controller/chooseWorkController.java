@@ -7,7 +7,7 @@ import com.example.gameplay.View.gamePlayView;
 import com.example.gameplay.View.healthCheckView;
 import com.example.gameplay.View.moneyChangeView;
 import com.example.gameplay.View.motivationView;
-import com.example.gameplay.toDoView;
+import com.example.gameplay.View.toDoView;
 
 public class chooseWorkController {
     private final Context context;
